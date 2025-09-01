@@ -52,7 +52,6 @@
         }
         .result {
             margin-top: 20px;
-            display: none;
             background-color: #eef;
             padding: 15px;
             border-radius: 5px;
@@ -71,8 +70,6 @@
 
     <div class="controls">
         <button onclick="loadRandomTopics()">🎲 토픽 다시 뽑기</button>
-        <button onclick="togglePrompt()">🧾 프롬프트 보기/숨기기</button>
-        <button onclick="copyPrompt()">📋 프롬프트 복사</button>
     </div>
 
     <div id="domainFilters" class="controls">
@@ -80,6 +77,11 @@
     </div>
 
     <form id="definitionForm"></form>
+
+    <div class="controls">
+        <button onclick="generatePrompt()">🤖 ChatGPT 채점 프롬프트 생성</button>
+        <button onclick="copyPrompt()">📋 프롬프트 복사</button>
+    </div>
 
     <div id="promptOutput" class="result"></div>
 
@@ -148,7 +150,7 @@ function loadRandomTopics() {
     });
 
     windowCurrentTopics = selected;
-    document.getElementById("promptOutput").style.display = "none";
+    document.getElementById("promptOutput").innerText = "";
 }
 
 function getRandomElements(arr, count) {
@@ -156,7 +158,12 @@ function getRandomElements(arr, count) {
     return shuffled.slice(0, count);
 }
 
-function generatePromptText() {
+function generatePrompt() {
+    const box = document.getElementById("promptOutput");
+    box.innerText = getPromptText();
+}
+
+function getPromptText() {
     let result = "다음은 사용자가 정의한 내용입니다. 각 항목에 대해 정의의 정확성을 0~10점으로 채점하고, 모범답안을 제시해 주세요.\n\n";
     windowCurrentTopics.forEach((topic, i) => {
         const userDef = document.getElementById("def" + i).value.trim() || "[미입력]";
@@ -165,18 +172,26 @@ function generatePromptText() {
     return result;
 }
 
-function togglePrompt() {
-    const box = document.getElementById("promptOutput");
-    if (box.style.display === "none") {
-        box.innerText = generatePromptText();
-        box.style.display = "block";
-    } else {
-        box.style.display = "none";
-    }
+function copyPrompt() {
+    const text = getPromptText();
+    navigator.clipboard.writeText(text).then(() => {
+        alert("프롬프트가 복사되었습니다!");
+    });
 }
 
+function toggleAll(allBox) {
+    const checks = document.querySelectorAll(".domainChk");
+    checks.forEach(cb => cb.checked = allBox.checked);
+    loadRandomTopics();
+}
+
+window.onload = fetchTopics;
+</script>
+</body>
+</html>
+
 function copyPrompt() {
-    const text = generatePromptText();
+    const text = getPromptText();
     navigator.clipboard.writeText(text).then(() => {
         alert("프롬프트가 복사되었습니다!");
     });
