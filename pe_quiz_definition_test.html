@@ -115,7 +115,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-top: 6px;
+    margin-top: 10px;
     padding: 0;
 }
 
@@ -136,7 +136,7 @@
 /* 모두 선택 */
 #selectAllWrapper {
     width: 100%;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
@@ -146,18 +146,19 @@
     flex-wrap: wrap;
     gap: 6px;
     align-items: center;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-/* 버튼 여백 최소화 */
+/* 버튼 높이 통일 */
 button {
-    padding: 6px 10px;
+    height: 48px;
+    padding: 0 16px;
     font-size: 14px;
     border-radius: 6px;
 }
 
-/* 모바일(600px 이하)에서는 4열 고정 */
+/* 모바일(600px 이하)에서는 4열 grid 고정 */
 @media (max-width: 600px) {
     #domainFilters {
         display: grid;
