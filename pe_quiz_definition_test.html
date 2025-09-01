@@ -88,17 +88,31 @@
     }
 }
 
-/* 체크박스들을 인라인으로 정렬 */
+/* 모든 요소 box-sizing 설정 */
+* {
+    box-sizing: border-box;
+}
+
+/* 체크박스 줄맞춤 */
+#domainFilters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+}
+
+/* 개별 체크박스 요소 */
 .domain-checkbox {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     margin-right: 10px;
     white-space: nowrap;
 }
 
-/* 모바일에서 좌우 여백/스크롤 방지 */
-body {
+/* 스크롤 방지 */
+html, body {
     overflow-x: hidden;
-    box-sizing: border-box;
+    max-width: 100%;
 }
 </style>
 </meta><meta content="width=device-width, initial-scale=1.0" name="viewport"/></head>
