@@ -110,16 +110,16 @@
 }
 
 
-/* 체크박스 3열 고정 레이아웃 */
+/* 기본: 데스크탑은 flex로 반응형 */
 #domainFilters {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    max-width: 600px;
-    margin: 0 auto;
     margin-top: 10px;
+    padding: 0;
 }
 
+/* 체크박스 스타일 */
 .domain-checkbox {
     display: flex;
     align-items: center;
@@ -135,9 +135,24 @@
 
 /* 모두 선택 */
 #selectAllWrapper {
-    grid-column: 1 / -1;
+    width: 100%;
     margin-bottom: 5px;
     font-weight: bold;
+}
+
+/* ✅ 모바일(최대 600px)에서만 3열 grid 고정 */
+@media (max-width: 600px) {
+    #domainFilters {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    #selectAllWrapper {
+        grid-column: 1 / -1;
+    }
 }
 
 
@@ -149,7 +164,7 @@ html, body {
 </style>
 </meta><meta content="width=device-width, initial-scale=1.0" name="viewport"/></head>
 <body>
-<h1>정보관리 기술사 정의 작성 테스트 >_<</h1>
+<h1>정보관리 기술사 정의 작성 테스트ㅋㅋㅋㅋㅋㅋㅋ</h1>
 <div class="controls">
 <button onclick="loadRandomTopics()">🎲 토픽 다시 뽑기</button>
 </div>
