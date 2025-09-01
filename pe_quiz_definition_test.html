@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>정보관리 기술사 정의 작성 테스트</title>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <style>
+<meta charset="utf-8"/>
+<title>정보관리 기술사 정의 작성 테스트</title>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control">
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<style>
         body {
             font-family: 'Segoe UI', sans-serif;
             max-width: 900px;
@@ -66,28 +67,42 @@
         .domain-checkbox {
             margin-right: 10px;
         }
-    </style>
-</head>
+    
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        font-size: 16px;
+    }
+    button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 14px;
+    }
+    textarea {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
+</meta><meta content="width=device-width, initial-scale=1.0" name="viewport"/></head>
 <body>
-    <h1>정보관리 기술사 정의 작성 테스트</h1>
-
-    <div class="controls">
-        <button onclick="loadRandomTopics()">🎲 토픽 다시 뽑기</button>
-    </div>
-
-    <div id="domainFilters" class="controls">
-        <label><input type="checkbox" id="selectAll" checked onchange="toggleAll(this)"> 모두 선택</label>
-    </div>
-
-    <form id="definitionForm"></form>
-
-    <div class="controls">
-        <button onclick="generatePrompt()">🤖 ChatGPT 채점 프롬프트 생성</button>
-        <button onclick="copyPrompt()">📋 프롬프트 복사</button>
-    </div>
-
-    <div id="promptOutput" class="result"></div>
-
+<h1>정보관리 기술사 정의 작성 테스트</h1>
+<div class="controls">
+<button onclick="loadRandomTopics()">🎲 토픽 다시 뽑기</button>
+</div>
+<div class="controls" id="domainFilters">
+<label><input checked="" id="selectAll" onchange="toggleAll(this)" type="checkbox"/> 모두 선택</label>
+</div>
+<form id="definitionForm"></form>
+<div class="controls">
+<button onclick="generatePrompt()">🤖 ChatGPT 채점 프롬프트 생성</button>
+<button onclick="copyPrompt()">📋 프롬프트 복사</button>
+</div>
+<div class="result" id="promptOutput"></div>
 <script>
 let allTopics = [];
 let windowCurrentTopics = [];
