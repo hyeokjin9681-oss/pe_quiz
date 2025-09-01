@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>정보관리 기술사 정의 작성 테스트</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        h1 {
+            color: #1a237e;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 10px;
+        }
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin-top: 5px;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #3949ab;
+            color: white;
+        }
+        button:hover {
+            background-color: #5c6bc0;
+        }
+        .result {
+            margin-top: 20px;
+            display: none;
+            background-color: #eef;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+        #domainFilters {
+            margin-top: 10px;
+        }
+        .domain-checkbox {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>정보관리 기술사 정의 작성 테스트</h1>
+
+    <div class="controls">
+        <button onclick="loadRandomTopics()">🎲 토픽 다시 뽑기</button>
+        <button onclick="togglePrompt()">🧾 프롬프트 보기/숨기기</button>
+        <button onclick="copyPrompt()">📋 프롬프트 복사</button>
+    </div>
+
+    <div id="domainFilters" class="controls">
+        <label><input type="checkbox" id="selectAll" checked onchange="toggleAll(this)"> 모두 선택</label>
+    </div>
+
+    <form id="definitionForm"></form>
+
+    <div id="promptOutput" class="result"></div>
+
+<script>
+let allTopics = [];
+let windowCurrentTopics = [];
+
+function fetchTopics() {
+    fetch('domain_topics.txt')
+        .then(res => res.text())
+        .then(text => {
+            const lines = text.split('\n');
+            let currentDomain = '';
+            allTopics = [];
+            const domainSet = new Set();
+
+            for (let line of lines) {
+                line = line.trim();
+                if (line.startsWith('[') && line.endsWith(']')) {
+                    currentDomain = line;
+                    domainSet.add(currentDomain);
+                } else if (line !== '') {
+                    allTopics.push({ full: `${currentDomain} ${line}`, domain: currentDomain });
+                }
+            }
+
+            // 도메인 체크박스 생성
+            const container = document.getElementById("domainFilters");
+            container.innerHTML = '<label><input type="checkbox" id="selectAll" checked onchange="toggleAll(this)"> 모두 선택</label>';
+            domainSet.forEach(domain => {
+                const label = document.createElement("label");
+                label.className = "domain-checkbox";
+                label.innerHTML = `<input type="checkbox" class="domainChk" value="${domain}" checked> ${domain.replace(/\[|\]/g, '')}`;
+                container.appendChild(label);
+            });
+
+            loadRandomTopics();
+        })
+        .catch(() => alert("domain_topics.txt 파일을 불러올 수 없습니다."));
+}
+
+function loadRandomTopics() {
+    const checkedDomains = Array.from(document.querySelectorAll(".domainChk:checked")).map(cb => cb.value);
+    const filtered = allTopics.filter(t => checkedDomains.includes(t.domain));
+
+    if (filtered.length < 10) {
+        alert("선택된 도메인의 토픽이 부족합니다.");
+        return;
+    }
+
+    const selected = getRandomElements(filtered, 10);
+    const form = document.getElementById("definitionForm");
+    form.innerHTML = "";
+
+    selected.forEach((topic, i) => {
+        const label = document.createElement("label");
+        label.setAttribute("for", "def" + i);
+        label.textContent = topic.full;
+
+        const textarea = document.createElement("textarea");
+        textarea.id = "def" + i;
+        textarea.name = "def" + i;
+
+        form.appendChild(label);
+        form.appendChild(textarea);
+    });
+
+    windowCurrentTopics = selected;
+    document.getElementById("promptOutput").style.display = "none";
+}
+
+function getRandomElements(arr, count) {
+    const shuffled = arr.slice().sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+}
+
+function generatePromptText() {
+    let result = "다음은 사용자가 정의한 내용입니다. 각 항목에 대해 정의의 정확성을 0~10점으로 채점하고, 모범답안을 제시해 주세요.\n\n";
+    windowCurrentTopics.forEach((topic, i) => {
+        const userDef = document.getElementById("def" + i).value.trim() || "[미입력]";
+        result += topic.full + "\n정의: " + userDef + "\n\n";
+    });
+    return result;
+}
+
+function togglePrompt() {
+    const box = document.getElementById("promptOutput");
+    if (box.style.display === "none") {
+        box.innerText = generatePromptText();
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
+}
+
+function copyPrompt() {
+    const text = generatePromptText();
+    navigator.clipboard.writeText(text).then(() => {
+        alert("프롬프트가 복사되었습니다!");
+    });
+}
+
+function toggleAll(allBox) {
+    const checks = document.querySelectorAll(".domainChk");
+    checks.forEach(cb => cb.checked = allBox.checked);
+    loadRandomTopics();
+}
+
+window.onload = fetchTopics;
+</script>
+</body>
+</html>
