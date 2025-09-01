@@ -109,6 +109,35 @@
     white-space: nowrap;
 }
 
+
+/* 체크박스 레이아웃 개선 */
+#domainFilters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+/* 각 체크박스 아이템을 작게 유지 */
+.domain-checkbox {
+    display: inline-flex;
+    align-items: center;
+    flex: 1 1 calc(50% - 16px); /* 2개씩 한 줄에 */
+    max-width: calc(50% - 16px);
+    white-space: nowrap;
+}
+
+/* 모바일 화면에서 더 많이 보이도록 설정 */
+@media (max-width: 600px) {
+    .domain-checkbox {
+        flex: 1 1 calc(33.33% - 16px); /* 모바일에서는 3개씩 한 줄에 */
+        max-width: calc(33.33% - 16px);
+        font-size: 15px;
+    }
+}
+
+
 /* 스크롤 방지 */
 html, body {
     overflow-x: hidden;
