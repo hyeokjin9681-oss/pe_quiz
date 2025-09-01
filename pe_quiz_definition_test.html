@@ -110,42 +110,34 @@
 }
 
 
-/* 체크박스 줄 맞춤 개선 */
+/* 체크박스 모바일 최적화 */
 #domainFilters {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    align-items: flex-start;
+    gap: 8px;
     margin-top: 10px;
-}
-
-.select-all {
-    width: 100%;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.domain-checkbox-wrapper {
-    flex: 0 0 auto;
+    padding: 0;
 }
 
 .domain-checkbox {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: flex-start;
     padding: 6px 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
     background: #fff;
     font-size: 14px;
     white-space: nowrap;
+    flex: 1 1 calc(33.33% - 8px); /* 모바일 기준 3개 */
+    box-sizing: border-box;
 }
 
-/* 모바일에서 2~3개씩 나오도록 강제 */
-@media (max-width: 600px) {
-    .domain-checkbox-wrapper {
-        flex: 1 1 calc(33.33% - 10px);
-        max-width: calc(33.33% - 10px);
-    }
+/* 모두 선택 */
+#selectAllWrapper {
+    width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 
@@ -157,7 +149,7 @@ html, body {
 </style>
 </meta><meta content="width=device-width, initial-scale=1.0" name="viewport"/></head>
 <body>
-<h1>정보관리 기술사 정의 작성 테스트 ㅋㅋㅋ</h1>
+<h1>정보관리 기술사 정의 작성 테스트!</h1>
 <div class="controls">
 <button onclick="loadRandomTopics()">🎲 토픽 다시 뽑기</button>
 </div>
@@ -194,11 +186,11 @@ function fetchTopics() {
             }
 
             const container = document.getElementById("domainFilters");
-            container.innerHTML = '<div class="select-all"><input type="checkbox" id="selectAll" checked onchange="toggleAll(this)"> 모두 선택</div>';
+            container.innerHTML = '<div id="selectAllWrapper"><input type="checkbox" id="selectAll" checked onchange="toggleAll(this)"> 모두 선택</div>';
             domainSet.forEach(domain => {
                 const div = document.createElement("div");
-                div.className = "domain-checkbox-wrapper";
-                div.innerHTML = `<label class="domain-checkbox"><input type="checkbox" class="domainChk" value="${domain}" checked> ${domain.replace(/\[|\]/g, '')}</label>`;
+                div.className = "domain-checkbox";
+                div.innerHTML = `<input type="checkbox" class="domainChk" value="${domain}" checked> ${domain.replace(/\[|\]/g, '')}`;
                 container.appendChild(div);
             });
 
