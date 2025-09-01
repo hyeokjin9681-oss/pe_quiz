@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>정의 입력 학습 페이지 (자동 로드)</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        h1 { color: #2c3e50; }
+        label { font-weight: bold; display: block; margin-top: 20px; }
+        textarea { width: 100%; height: 80px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+        .result { margin-top: 30px; white-space: pre-wrap; background: #f8f8f8; padding: 10px; border-radius: 5px; }
+        #definitionForm { margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <h1>정의 입력 퀴즈 (domain_topics.txt 자동 로드)</h1>
+
+    <form id="definitionForm"></form>
+    <button onclick="loadRandomTopics()">🎲 토픽 다시 뽑기</button>
+    <button onclick="generatePrompt()">🤖 ChatGPT 채점 프롬프트 생성</button>
+    <div class="result" id="promptOutput"></div>
+
+<script>
+let allTopics = [];
+
+function loadTopicsFromTxt() {
+    fetch('domain_topics.txt')
+        .then(response => {
+            if (!response.ok) throw new Error("파일 로딩 실패");
+            return response.text();
+        })
+        .then(text => {
+            const lines = text.split('\n');
+            let currentDomain = '';
+            allTopics = [];
+            for (let line of lines) {
+                line = line.trim();
+                if (line.startsWith('[') && line.endsWith(']')) {
+                    currentDomain = line;
+                } else if (line !== '') {
+                    allTopics.push(`${currentDomain} ${line}`);
+                }
+            }
+            loadRandomTopics();
+        })
+        .catch(error => {
+            alert("domain_topics.txt 파일을 불러올 수 없습니다. 같은 폴더에 있는지 확인하세요.");
+        });
+}
+
+function loadRandomTopics() {
+    if (allTopics.length === 0) {
+        alert("토픽 데이터를 먼저 불러와야 합니다.");
+        return;
+    }
+
+    const form = document.getElementById("definitionForm");
+    form.innerHTML = "";
+    const selected = getRandomElements(allTopics, 10);
+
+    selected.forEach((topic, index) => {
+        const label = document.createElement("label");
+        label.setAttribute("for", "def" + index);
+        label.textContent = topic;
+
+        const textarea = document.createElement("textarea");
+        textarea.id = "def" + index;
+        textarea.name = "def" + index;
+        textarea.placeholder = "여기에 정의를 입력하세요...";
+
+        form.appendChild(label);
+        form.appendChild(textarea);
+    });
+
+    window.currentTopics = selected;
+}
+
+function getRandomElements(arr, count) {
+    const shuffled = arr.slice().sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+}
+
+function generatePrompt() {
+    if (!window.currentTopics) return;
+    let result = "다음은 사용자가 정의한 내용입니다. 각 항목에 대해 정의의 정확성을 0~10점으로 채점하고, 모범답안을 제시해 주세요.\n\n";
+    window.currentTopics.forEach((topic, i) => {
+        const userDef = document.getElementById("def" + i).value.trim() || "[미입력]";
+        result += topic + "\n정의: " + userDef + "\n\n";
+    });
+    document.getElementById("promptOutput").innerText = result;
+}
+
+window.onload = loadTopicsFromTxt;
+</script>
+</body>
+</html>

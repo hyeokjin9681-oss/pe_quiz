@@ -1,0 +1,775 @@
+[경영]
+EA
+ITSM
+IT Outsourcing
+SoW
+SLA
+SLM
+ITIL 4.0
+ISO/IEC 20000
+IT거버넌스
+GRC(Governance, Risk and Compliance)
+BSC
+5Force분석
+7S model
+SWOT 분석
+DRP
+MECE
+STEEP
+AHP(Analytic Hierarchy Process)
+PEST 분석
+Design thinking
+BPR
+ISP
+ISMP
+Value Chain
+기술수용주기
+캐즘이론
+데스밸리
+IT 생산성 Paradox
+IT 투자분석
+경제성 평가 기법
+ESG경영
+AI트랜스포메이션(AX)
+ERP
+SCM (공급망관리)
+OLAP
+Data Mining
+Data Warehouse
+CRISP-DM
+SEMMA
+BCM
+DRS
+RTO, RPO, RCO, RSO, BCO
+BIA
+BCP
+지식재산권
+레그테크
+섭테크
+AI 리터러시
+디지털 포용
+고객여정지도
+화이트 레이블마케팅 
+비즈니스 모델 컨버스
+TAM-SAM-SOM
+규제 샌드박스
+디지털플랫폼정부
+MVP(Minimum Viable Product)
+기술부채 유형과 관리방법
+제약이론(Theory of Constraints)
+OKR(Objectives and Key Results)
+범용 인공지능 관리 프레임워크
+개인정보 안심구역, 데이터 안심구역
+공간정보 안심구역
+디지털 권리장전
+
+[PM]
+프로젝트의 특징
+ISO 21500
+PMO, (외부)EPMO, 공공 PMO
+PMO 와 감리 비교
+정보시스템 감리
+운영감리, 유지관리사업 감리
+프로세스 그룹(5 개)
+지식영역관리(KA)
+PMBOK 7판 성과 영역
+조정(테일러링)
+프로젝트 통합관리
+경제성 분석 기법
+순현재가치(NPV)
+IT-ROI
+프로젝트범위관리
+요구사항
+요구사항 수집기법
+요구사항 명세서(SRS)
+요구사항 추적표, 정방향, 역방향
+Scope Creep
+GoldPlating
+연동기획(Rolling Wave Planning)
+3점산정
+프로젝트 일정단축
+프로젝트 일정개발
+CPM
+CCM
+자원최적화
+일정단축기법
+획득가치관리(EVM)
+프로젝트 품질관리
+품질보증(QA)
+품질통제(QC)
+인스펙션, 인스펙션 프로세스
+품질비용
+형상관리
+터크만 5단계
+동기부여이론
+갈등해결기법
+프로젝트 위험관리(ISO 31000추가)
+정성적 위험분석
+정량적 위험분석
+위험 대응 계획 수립
+현저성 모델
+Agile 선언문
+SCRUM
+번다운차트
+스크럼보드 칸반보드
+XP
+Lean(린) 경영
+린스타트업(Lean Startup)
+Pair Programming
+
+[SW]
+소프트웨어공학
+폭포수모델
+프로토타입모델
+Spiral모델
+반복적 개발모델
+RAD
+SW개발방법론
+정보공학(IE)방법론
+객체지향 프로그래밍 특징
+객체지향설계의원리
+CBD
+Product_Line
+요구공학
+요구사항
+요구사항 명세서
+개발 방법론 테일러링(Tailoring)
+AOP
+TDD
+코드스멜
+DevOps
+SRE
+무중단 배표 기법의 4종류
+SW Architecture
+ISO_IEC_IEEE42010(IEEE1471)
+SW Architecture 평가
+ATAM
+CBAM
+SW Architecture 모델,패턴
+4+1 View Model
+SOA
+MSA
+API Gateway
+서비스 매쉬
+DDD(Domain Driven Design)
+UML과 다이어그램
+Class diagram
+Usecase Diagram
+Sequence diagram
+Design Pattern
+MVC Pattern
+테스트 단계 분류
+Test 일반
+테스트 유형
+V-Model
+블랙박스 테스트
+화이트박스 테스트
+탐색적 테스팅
+테스트 자동화
+성능테스트
+Regression Test
+MC_DC
+경험기반 기법
+테스트베드(Testbed)
+Testcase
+TestCoverage
+모듈화
+소프트웨어 리팩토링
+3R
+SW유지보수
+CMMI 3.0
+McCabe의 회전복잡도
+SW 안전성 분석 개념
+FTA(결함 트리 분석)
+FMEA
+HAZOP
+ETA_STPA
+오픈소스 소프트웨어
+오픈소스 라이센스별 의무조항
+OSS 거버넌스
+SW 비용 산정 일반
+Function Point
+간이법 계산
+정규법 계산
+하드웨어규모산정3가지방법
+로우코드(Low Code)
+기술 부채
+바이브코딩
+SBOM(Software Bill of Material)
+Clean architecture
+Service Discovery Pattern
+CQRS 패턴
+사가패턴(SAGA)
+정보시스템의 성능 요구사항
+
+[NW]
+소스코딩, 채널코딩, 라인코딩
+PCM
+캡슐화
+Service Primitive(프리미티브)
+OSI 7 Layers
+Application(7)
+Transport(4)
+Network(3)
+Data Link(2)
+H-ARQ
+BEC
+FEC
+자동재전송요구(ARQ)
+순환중복검사(CRC)
+해밍코드
+라우팅 프로토콜
+RIP, OSPF
+Sliding Window 알고리즘
+오류제어
+Supernetting, Subnetting
+IPv6
+변환(GW) 관점
+NAT
+TCP
+UDP
+SCTP
+MPTCP
+DNS
+DHCP
+HTTP V3.0
+QoS
+Queueing
+Traffic Policing
+Traffic Shaping
+TCP_혼잡제어
+IntServ
+DiffServ
+VXLAN(Virtual eXtensible LAN)
+VLAN
+L2,L4,L7스위치
+프록시
+리버스 프록시
+Wi-Fi8
+UWB
+NFC
+국가재난안전통신망(PS-LTE)
+RAN Sharing
+MOCN
+Network Slicing
+5G(IMT-2020)주요기술
+5G 아키텍쳐
+Private5G
+5G 표준
+AI-RAN
+O-RAN
+6G
+저궤도위성통신
+IBN(Intent-Based Networking)
+MPLS
+디지털 트윈 네트워크
+SDN
+OpenFlow
+SD-WAN
+NFV
+Matter
+무선충전기술
+NaaS
+
+[통계]
+통계학
+자료
+이상치_결측치_노이즈
+기술통계
+확률
+베이즈 정리
+Apriori 알고리즘
+확률변수_확률밀도함수
+확률분포_정규분포
+베르누이_기하분포
+추리통계
+추정이론
+점추정
+구간추정
+가설검정
+유의확률(p-value)
+검정 2개 개념
+t검정
+분산분석
+EDA_CDA
+릿지회귀와 라쏘회귀
+상관관계_인과관계
+시계열분석
+다중공선성
+연관성분석
+단일 모집단 평균 가설 검정
+편항_분산
+불편 추정량
+
+[AI]
+인공지능 개요
+인공지능 소프트웨어 개발 프로세스
+기계학습
+지도학습
+비지도학습
+강화학습
+KNN
+서포트 벡터 머신(SVM)
+머신러닝 파이프라인
+신경망(Neural Network)
+딥러닝
+활성화 함수
+원핫 인코딩, 소프트맥스 함수
+손실함수
+경사하강법
+기울기소실문제
+역전파(Backpropagation)
+과적합 문제
+DropOut
+파라미터_하이퍼파라미터
+CNN
+YOLO
+RNN
+LSTM
+회귀분석
+클러스터링(Clustering)
+k-means알고리즘
+DBSCAN(밀도기반클러스터링)
+자기조직화지도(SOM)
+차원축소
+PCA(주성분 분석)
+GAN
+DCGAN
+능동학습(Active Learning)
+Q러닝
+분석모델평가방법
+교차 검증(Cross Validation)
+혼동 행렬(Confusion Matrix)
+F1-Score
+클래스,데이터 불균형(Class Imbalance)
+편향(biased)
+전이학습(Transfer Learning)
+유전자 알고리즘
+협업 필터링(Collaborative Filtering)
+자기지도학습
+VAE(Variational Autoencoder)
+오토인코더(Autoencoder)
+유사도(Similarity)
+연합학습
+Random Forest와 Adaboost
+XGBoost(eXtreme Gradient Boosting)
+이미지 데이터 어노테이션
+분류 알고리즘
+딥러닝 모델 경량화 기술
+자연어처리(NLP)
+057_Precision & Recall
+TF,IDF
+NER_Word embedding_BERT_GPT-3
+어텐션 메커니즘
+온디바이스AI
+모델옵스
+컨셉 드리프트와 데이터 드리프트
+AutoML
+AIOps
+AI Foundation Model
+ChatGPT
+어텐션 메커니즘
+Transformer
+ViT(Vision Transformer)
+Zero-shot, One-shot, Few-shot Learning
+하이퍼파라미터 최적화
+프롬프트 엔지니어링
+초거대 AI
+멀티모달 AI
+인공지능, 기계학습 적대적 공격
+XAI
+인공지능 윤리 기준
+인공지능감리
+AI 기본법
+인공지능 성능평가
+대규모언어모델 평가기법
+RAG
+Vector DBMS
+AI Agent
+Agentic AI
+MCP(Model Context Protocol)
+인공지능 소프트웨어 테스트 기법
+PR곡선과 ROC 곡선
+실루엣 계수
+소버린 AI
+PEFT와 LoRA
+MOE와 COT
+파인튜닝(Fine-tuning)
+
+[DB]
+데이터베이스 개념
+Transaction
+데이터 독립성
+Isolation Level
+키(key) 유형
+분산 DB
+PACELC
+데이터 모델링
+암스트롱 공리
+연결함정(Connection Trap)
+데이터베이스 관계
+함수적 종속성
+1 차정규화
+2 차정규화
+3 차정규화
+BCNF(3.5NF)
+4 차정규화
+5 차정규화
+반정규화
+데이터무결성 제약조건, 유형
+데이터 무결성 유지 방법
+DB 장애
+데이터회복
+데이터베이스 백업
+로그기반기법
+체크포인트기법
+그림자페이지기법
+데이터회복
+ARIES
+Locking
+2PL
+TimeStamp Ordering
+다중 버전 동시성 제어(MVCC)
+낙관적 검증(Validation)기법
+DDL, DML, DCL, TCL
+Join
+Join 유형
+SQL 처리과정
+2PC
+DB 성능개선
+Index
+옵티마이저(Optimizer)
+튜닝절차
+힌트(Hint)
+아파치 카프카(Kafka)
+빅데이터 시각화
+빅데이터 플랫폼 아키텍처 설계
+데이터 전처리
+데이터 클렌징(Cleansing)
+데이터 프로파일링(Profiling)
+합성 데이터(Synthetic Data)
+MDM
+데이터표준화
+데이터품질관리
+샤딩(Sharding)
+DQ 인증
+CDC
+데이타베이스 파티셔닝
+쿼리오프 로딩
+데이터옵스(DataOps)
+Data Mesh
+Data Lakehouse
+데이터 거버넌스
+팬텀충돌
+데이터 리니지
+
+[DS]
+Web 3.0
+촉각 인터넷(Tactile Internet)
+프로그레시브웹앱
+API, OPEN API
+SOAP, REST
+JSON_YAML.doc
+JASON WEB Token.doc
+Oauth 2.0
+SSO
+디지털ID
+서버리스 컴퓨팅
+IaaS, PaaS, SaaS
+PaaS
+XaaS
+DaaS(Desktop as a Service)
+Cloud Computing
+Public Cloud 서비스 분류
+Private Cloud
+멀티클라우드
+분산 클라우드
+소버린 클라우드
+PPP Cloud
+Hybrid Cloud
+SECaaS
+클라우드 네이티브 애플리케이션
+CNMM
+클라우드 서비스 품질 성능
+오토스케일링(Auto Scaling).doc
+클라우드전환
+코드형 인프라스트럭처
+LXC(Linux Contatiner)
+가상화
+하이퍼바이저
+VDI.doc
+도커(Docker).doc
+컨테이너.doc
+쿠버네티스(Kubernetes)
+MSP(Managed Service Provider)
+책임공유모델(SRM)
+오픈 스택 프로젝트
+ISOIEC27017
+모바일 엣지컴퓨팅(Edge Computing)
+앰비언트 컴퓨팅
+인터미턴트컴퓨팅
+공간 컴퓨팅(Spatial Computing)
+C-ITS.doc
+Zero UI.doc
+AI 디지털교과서로 변경
+Metaverse.doc
+메타버스 전략
+가상현실(VR)
+인더스트리5.0
+인더스트리4.0
+스마트 팩토리
+EdgeCPS
+CPS
+퍼듀모델.doc
+디지털 스레드(Digital Thread)
+디지털트윈
+RPA
+의료 마이데이터
+블록체인.doc
+머클트리(Merkle Tree)
+합의 알고리즘
+스마트 계약 (Smart Contract)
+모바일신분증
+STO
+CBDC
+블록체인 트릴레마
+NFT
+스테이블코인
+ISO 26262
+Smart Car
+드론 보안위협
+안티 드론 시스템 프레임워크
+UAM
+AAM(Advanced Air Mobility)
+디지털권리장전
+가트너 10대 전략기술 
+슈퍼앱(Super App)
+프롬프트 엔지니어링
+양자컴퓨터
+큐비트(Qubit)
+디지털 리터러시(Digital Literacy)
+디지털 역기능
+AX(AI Transformation)
+피지컬AI(Physical AI)
+AICC
+AI 바이브 코딩
+
+[보안]
+보안(Security)
+암호화(Encryption)
+스트림 암호화(stream cipher)
+CSAP
+ISMS-P
+CBPR
+CC(ISO15408)
+CC
+PBD(Privacy By Design)
+합성데이터
+차분 프라이버시
+PEC(Privacy Enhancing Computation)
+개인정보 익명화
+가명정보_결합_및_반출방법
+프라이버시 보호모델
+비밀키 암호화
+블록 암호화
+암호문공격
+Feistel
+디피헬만, RSA
+타원곡선
+암호학적 해시함수
+메시지 인증(Message Authentication)
+양자암호기술
+양자내성암호화
+MPC
+제로데이 취약점
+ABAC
+LBAC_HRU
+접근제어(AC)
+접근제어 Model
+전자서명,디지털서명
+이중서명
+FIDO 2.0
+패스키
+제로트러스트 가이드라인2.0
+생체정보보호 가이드라인
+사이버 디셉션(Cyber Deception)
+샌드박스(Sandbox)
+Firewall
+WAF
+NAC
+ESM
+SIEM
+SOAR
+SASE(Secure Access Service Edge)
+SSE
+사이버 레질리언스(Cyber Resilience)
+ASM(Attack Surface Management)
+CTEM
+UEBA
+스푸핑 공격
+Credential Stuffing
+SQL Injection
+CSRF
+SSRF
+APT
+공급망보안가이드라인1.0
+DDOS
+사회공학기법
+랜섬웨어(Ransomware)
+다크패턴
+WEB SHELL
+사이버킬체인
+ATT&CK
+사이버보안 메시(Cyberseccurity Mesh)
+디지털_컴퓨터포렌식
+안티포렌식
+시큐어코딩
+난독화
+VPN_SSLVPN_IPsecVPN
+SSL_TLS
+SDP
+망분리
+국가망보안체계(N2SF)
+망연계
+OWASP TOP 10 for LLM
+OWASP Top 10
+CVE, CWE
+클라우드 컴퓨팅 취약점, 대응기술
+CASB
+CNAPP
+CSPM, CWPP
+가상화,하이퍼바이저(Hypervisor)  취약점 및 대응기술
+TEE(Trusted Execution Envrionment)
+TPM(Trusted Platform Module)
+IoT 보안 위협
+오픈소스 취약점 및 대응방안
+디지털 트윈(Digital Twin)의 보안위협
+스마트팩토리 취약점 및 대응방안
+드론 취약점 및 대응
+블록체인 플랫폼(보안위협)
+devsecops
+메타버스 윤리원칙
+인공지능 윤리원칙
+딥페이크
+블록체인 암호기술 가이드라인
+범용인공지능위험관리프레임워크
+AI TRiSM
+BPFdoor
+J2공격
+
+[법가이드]
+SW 진흥법
+SW 안전확보
+민간투자형 SW 사업 추진 가이드 2.0
+SW 영향평가
+과업심의위원회
+상용 SW 직접구매
+SW 품질성능 평가시험
+SW 프로세스 품질 인증
+기술자 직무제
+공공부문 SaaS 이용가이드라인
+ISP, ISMP 9판
+범정부정보기술 아키텍처
+디지털서비스 전문계약제도
+정보시스템 운영 성과관리
+공공정보화사업 단계별 사업관리
+공공데이터 표준화 관리 메뉴얼
+디지털안전 3법
+ISO 22301
+SW 규모산정
+HW 규모산정
+DB 용량산정
+2025년 SW 사업대가 산정 가이드
+SW 기술성 평가기준 지침
+데이터 기본법
+데이터 가치평가 
+개인정보보호법
+개인정보 영향평가(PIA)
+가명처리가이드라인
+PbD 인증제
+정보보호공시 가이드라인
+생성형 AI 활용 보안 가이드라인
+생성형 AI 개발 및 활용을 위한 개인정보 처리 안내서
+국가클라우드컴퓨팅보안가이드라인
+ISO 62443
+ISO 31000
+ISO 61508
+ISO 21434
+ISO IEC 25010(ISO 9126)
+ISO 25000(SQuaRE)
+ISO 29119
+ISO 33063
+UI/UX 가이드라인
+생성형 AI 학습을 위한 멀티모달 데이터의 품질검증 방법
+
+[CA]
+폰노이만_하버드
+CPU
+제어장치(control unit)
+멀티 GPU
+GPU(Graphic processing unit)
+GPGPU
+주기억장치(메모리)_페이징_세그멘테이션
+시스템버스, 중재버스
+DMA
+CXL
+IPC
+부트로더
+TLB(Translation Look-aside Buffer)_120회
+메모리관리(MMU)
+Cache 및 일관성 유지방법
+가상메모리(Virtual Mamory)
+메모리 인터리빙
+단편화(Fragmentation)
+MESI
+사상기법
+교체알고리즘_LRU_FIFO_LFU
+메모리누수
+Pipeline(파이프라인)
+Pipeline Hazard
+HA
+결함허용 컴퓨터(FTS)
+RAID
+DAS_NAS_SAN_SDS_FAN
+뉴로모픽칩(Neuromorphic chip)
+PIM(Processing in Memory)
+PNM(Processing Near Memory)
+HBM
+인공지능반도체(NPU)
+FPGA
+RISC-V
+IPC
+칩렛(Chiplet)
+
+[OS]
+OS
+커널(kernel)
+Locality_시간지역성_공간지역성
+CPU Scheduling
+선점방식
+Round Robin
+SRT_SJF
+MLQ_MLFQ
+RM_EDF
+비선점방식
+HRN
+Critical Section
+Mutual Exclusion
+태스크의 동기화
+Semaphore
+우선순위역전
+모니터(Monitor) 동기화
+교착상태
+Wait-die와 Wound-wait
+자원할당그래프
+Banker's Algorithm
+스핀락(Spinlock)
+경쟁 조건(Race Condition)
+문맥교환(Context Switching)
+Process Control Block
+쓰레드_프로세스와쓰레드
+인터럽트종류
+Thrashing_WS_PFF
+워치독 타이머(watchdog timer)
+세그멘테이션오류
+Secure OS 추가필요
