@@ -116,28 +116,35 @@
     flex-wrap: wrap;
     gap: 10px;
     align-items: flex-start;
-    padding: 0;
     margin-top: 10px;
 }
 
-#domainFilters .select-all {
+.select-all {
     width: 100%;
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
-.domain-checkbox {
+.domain-checkbox-wrapper {
     flex: 0 0 auto;
-    padding: 5px 10px;
-    background: #fff;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    white-space: nowrap;
-    font-size: 14px;
 }
 
+.domain-checkbox {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* 모바일에서 2~3개씩 나오도록 강제 */
 @media (max-width: 600px) {
-    .domain-checkbox {
-        font-size: 15px;
+    .domain-checkbox-wrapper {
+        flex: 1 1 calc(33.33% - 10px);
+        max-width: calc(33.33% - 10px);
     }
 }
 
@@ -150,7 +157,7 @@ html, body {
 </style>
 </meta><meta content="width=device-width, initial-scale=1.0" name="viewport"/></head>
 <body>
-<h1>정보관리 기술사 정의 작성 테스트 수정됐나?</h1>
+<h1>정보관리 기술사 정의 작성 테스트 ㅋㅋㅋ</h1>
 <div class="controls">
 <button onclick="loadRandomTopics()">🎲 토픽 다시 뽑기</button>
 </div>
@@ -187,12 +194,12 @@ function fetchTopics() {
             }
 
             const container = document.getElementById("domainFilters");
-            container.innerHTML = '<label class="select-all"><input type="checkbox" id="selectAll" checked onchange="toggleAll(this)"> 모두 선택</label>';
+            container.innerHTML = '<div class="select-all"><input type="checkbox" id="selectAll" checked onchange="toggleAll(this)"> 모두 선택</div>';
             domainSet.forEach(domain => {
-                const label = document.createElement("label");
-                label.className = "domain-checkbox";
-                label.innerHTML = `<input type="checkbox" class="domainChk" value="${domain}" checked> ${domain.replace(/\[|\]/g, '')}`;
-                container.appendChild(label);
+                const div = document.createElement("div");
+                div.className = "domain-checkbox-wrapper";
+                div.innerHTML = `<label class="domain-checkbox"><input type="checkbox" class="domainChk" value="${domain}" checked> ${domain.replace(/\[|\]/g, '')}</label>`;
+                container.appendChild(div);
             });
 
             loadRandomTopics();
